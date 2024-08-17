@@ -9,7 +9,6 @@ describe("ChatController E2E", () => {
   app.post("/chat", (req, res) => chatController.handle(req, res))
 
   it("should return a cached response if available", async () => {
-    // Mocking the cache service to simulate a cached response
     const cacheRepository = chatController['sendMessageUseCase']['cacheRepository']
     cacheRepository.set("hello", "cached response")
 
